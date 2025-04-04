@@ -9,9 +9,15 @@ class Odo_get{
 public:
     // Odo_get(int pin1_x ,int pin2_x);
     Odo_get(odo_get_config config);
+    double a;//中心角[rad]
+    double p;//パルス量　エンコーダの回転数みたいなもの。
+    double r = 29;//半径[mm]
+    double l;//孤の長さ[mm]
+    void get_x() , get_y();
     
 private:  
     Encoder enc_x_;
+    Encoder enc_y_;
     
 };
 }

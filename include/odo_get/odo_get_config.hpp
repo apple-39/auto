@@ -8,6 +8,8 @@ struct odo_get_config
 {
     int pin1_x;
     int pin2_x;
+    int pin1_y;
+    int pin2_y;
 };
 
 }
