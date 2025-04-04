@@ -13,7 +13,7 @@ namespace ODO_GET__ODO_GET
 
     void Odo_get::get_x(){
         p = enc_x_.read();
-        a = 2*3.14 * p/8192;
+        a = 2*PI * p/8192;
         l = r *a;
         Serial.print("x座標 : ");
         Serial.print(l);
@@ -21,7 +21,7 @@ namespace ODO_GET__ODO_GET
 
     void Odo_get::get_y(){
         p = enc_y_.read();
-        a = 2*3.14 * p/8192;
+        a = 2*PI * p/8192;
         l = r *a;
         Serial.print("y座標 : ");
         Serial.print(l);
