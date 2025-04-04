@@ -1,33 +1,16 @@
 
 #include "odo_get/odo_get.hpp"
+#include"odo_get/odo_get_config.hpp"
+
 #include<Arduino.h>
 #include<Encoder.h>
 
 namespace ODO_GET__ODO_GET
 {
-void Odo_get::get_x(int enc_pin1 , int enc_pin2)
-{
-    Encoder enc_x(enc_pin1,enc_pin2);
-    p = enc_x.read();
-    Serial.print(" x座標 ");
-    Serial.print(p);
-    // a = 2*3.14 * p/8192;
-    // l = r *a;
-    // Serial.print("x座標 : ");
-    // Serial.print(l);
-}
 
-void Odo_get::get_y(int enc_pin1 , int enc_pin2)
-{
-    Encoder enc_y(enc_pin1,enc_pin2);
-    p = enc_y.read();
-    Serial.print("  y座標 ");
-    Serial.print(p);
-    // a = 2*3.14 * p/8192;
-    // l = r *a;
-    // Serial.print("y座標 : ");
-    // Serial.print(l);
-    // Serial.println("");
-}
+    // Odo_get::Odo_get(int pin1_x ,int pin2_x) : enc_x_(pin1_x,pin2_x){}
+    Odo_get::Odo_get(odo_get_config config) : enc_x_(config.pin1_x , config.pin2_x){}
+
+
 
 }
