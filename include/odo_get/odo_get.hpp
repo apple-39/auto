@@ -1,5 +1,6 @@
 #ifndef ODO_GET__ODO_GET_HPP
 #define ODO_GET__ODO_GET_HPP
+
 #include"odo_get/odo_get_config.hpp"
 #include<Encoder.h>
 namespace ODO_GET__ODO_GET
@@ -13,7 +14,7 @@ public:
     double p;//パルス量　エンコーダの回転数みたいなもの。
     double r = 29;//半径[mm]
     double l;//孤の長さ[mm]
-    void get_x() , get_y();
+    double get_x() , get_y();
     
 private:  
     Encoder enc_x_;
