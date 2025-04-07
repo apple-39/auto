@@ -7,7 +7,7 @@
 
 ODO_GET__ODO_GET::odo_get_config config = {41,40 , 21,20};
 ODO_GET__ODO_GET::Odo_get od( config );
-simple_pid_lib::PIDConfig pid_config(1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 1.0);
+simple_pid_lib::PIDConfig pid_config(1.0, 0.0,0.0, 0.0, 0.0, 0.0, -1.0, 1.0);
 
 simple_pid_lib::PID pid_x(pid_config);
 
