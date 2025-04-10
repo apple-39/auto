@@ -24,7 +24,7 @@ namespace ODO_GET__ODO_GET
         p = enc_y_.read();
         a = 2*PI * p/8192;
         l = r *a;
-        Serial.print("y座標 : ");
+        Serial.print("  y座標 : ");
         Serial.print(l);
         return l;
 

@@ -6,10 +6,10 @@ namespace ODO_GET__ODO_GET//フォルダと同じ
 
 struct odo_get_config
 {
-    int pin1_x;
-    int pin2_x;
-    int pin1_y;
-    int pin2_y;
+    int pin1_x = 41;
+    int pin2_x = 40;
+    int pin1_y = 21;
+    int pin2_y = 20;
 };
 
 }

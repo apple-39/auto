@@ -8,12 +8,18 @@ namespace XY_CALC
 {
 class CALC{
 public:
-    CALC(XY_CALC::xy_calc_config config);
+    // CALC(XY_CALC::xy_calc_config config);
+    void set();
+    void input_calc(double target_x , double target_y);
     void show_x_y();
     void output_calc();
-    double target_x_ , target_y_;
+    double output_x, output_y , output_z;
+    double target_x_ , target_y_, target_z_;
 private:  
-    double err_x_,err_y_;
+    double err_x_,err_y_,err_z_;
+    double pre_angle , now_angle , diff_angle;
+
+
 }; //XY_CALC_
 }
 
