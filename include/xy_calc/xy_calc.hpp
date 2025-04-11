@@ -2,13 +2,16 @@
 #define XY_CALC__XY_CALC_HPP
 
 #include "xy_calc/xy_calc_config.hpp"
-
+#include"gyro/gyro.hpp"
+#include "odo_get/odo_get.hpp"
+#include<simple_pid_lib/pid.hpp>
 
 namespace XY_CALC
 {
 class CALC{
 public:
-    // CALC(XY_CALC::xy_calc_config config);
+    // CALC();
+    GYRO gyro;
     void set();
     void input_calc(double target_x , double target_y);
     void show_x_y();
