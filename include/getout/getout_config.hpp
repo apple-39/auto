@@ -4,15 +4,15 @@ namespace GETOUT_CONFIG//フォルダと同じ
 {
 struct getout_config
 {
-    int lf_pwm = 41;
-    int lf_dir = 40;
-    int lb_pwm = 41;
-    int lb_dir = 40;
+    int lf_pwm = 19;
+    int lf_dir = 18;
+    int lb_pwm = 36;
+    int lb_dir = 37;
 
-    int rf_pwm = 41;
-    int rf_dir = 40;
-    int rb_pwm = 41;
-    int rb_dir = 40;
+    int rf_pwm = 15;
+    int rf_dir = 14;
+    int rb_pwm = 23;
+    int rb_dir = 22;
 };
 }
 #endif //GETOUT_CONFIG__HPP
