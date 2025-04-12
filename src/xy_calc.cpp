@@ -13,26 +13,27 @@ namespace XY_CALC
     }
 
     void CALC::show_x_y(){
-        od.get_x();
-        od.get_y();
+        Serial.print("x座標 : ");
+        Serial.print( od.get_x());
+        Serial.print(" y座標 : ");
+        Serial.print( od.get_y());
     }
 
 
-    void CALC::input_calc(double target_x , double target_y){
+    void CALC::input_calc(double target_x , double target_y , double target_z){
         target_x_ = target_x;
         target_y_ = target_y;
+        target_z_ = target_z;
     }
 
     void CALC::output_calc(){
 
         now_angle = gyro.get_angle();
-        err_z_ = target_z_ - now_angle;
-        err_x_ = target_x_ - od.get_x();
-        err_y_ = target_y_ - od.get_y();
+        err_calc();
 
-        pid_z.update(err_z_);
-        pid_x.update(err_x_);
-        pid_y.update(err_y_);
+        pid_z.update(err_z);
+        pid_x.update(err_x);
+        pid_y.update(err_y);
 
         pid_z.reset_integral();
         pid_x.reset_integral();
@@ -52,6 +53,16 @@ namespace XY_CALC
         Serial.print("   output_z :");
         Serial.print(output_z);
     }
+
+    double CALC::err_calc(){
+        err_x = target_x_ - od.get_x();
+        err_y = target_y_ - od.get_y();
+        err_z = target_z_ - now_angle;
+
+        return sqrt(  err_x*err_x + err_y*err_y   );
+
+    }
+
 
 
 }// XY_CALC_

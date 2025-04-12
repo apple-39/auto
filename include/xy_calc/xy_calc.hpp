@@ -13,13 +13,15 @@ public:
     // CALC();
     GYRO gyro;
     void set();
-    void input_calc(double target_x , double target_y);
+    void input_calc(double target_x , double target_y ,double target_z);
     void show_x_y();
     void output_calc();
+    double err_calc();
     double output_x, output_y , output_z;
     double target_x_ , target_y_, target_z_;
+    double err_x,err_y,err_z;
+
 private:  
-    double err_x_,err_y_,err_z_;
     double pre_angle , now_angle , diff_angle;
 
 

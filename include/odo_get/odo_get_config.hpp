@@ -3,7 +3,6 @@
 
 namespace ODO_GET__ODO_GET//フォルダと同じ
 {
-
 struct odo_get_config
 {
     int pin1_x = 41;
