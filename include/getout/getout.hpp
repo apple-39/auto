@@ -5,7 +5,7 @@
 #include "xy_calc/xy_calc.hpp"
 #include <cytron_motor_driver_lib/motor.hpp>
 
-namespace GETOUT_CONFIG//フォルダと同じ
+namespace GETOUT//フォルダと同じ
 {
 class getout {
 public:
@@ -13,10 +13,10 @@ public:
     void set();
     void getout_switch();
     void active_motor();
-    XY_CALC::CALC cal;
 
 private:
     int phase = 0;
+    XY_CALC::CALC cal;
     cytron_motor_driver_lib::Motor motorlf,motorlb,motorrf,motorrb;
 
 };

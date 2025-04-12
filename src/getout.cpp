@@ -1,7 +1,7 @@
 #include "getout/getout.hpp"
 #define  GIVE_RANGE 10
 
-namespace GETOUT_CONFIG
+namespace GETOUT
 {
     
 getout::getout(getout_config config) : motorlf(config.lf_pwm , config.lf_dir) , motorlb(config.lb_pwm , config.lb_dir) ,
@@ -61,10 +61,8 @@ void getout::active_motor(){
   motorrf.drive(  cal.output_x - cal.output_y + cal.output_z );
   motorrb.drive(  -cal.output_x - cal.output_y + cal.output_z );
 
-  Serial.println("");
-
 }
-}
+}// GETOUT
 
     
 
