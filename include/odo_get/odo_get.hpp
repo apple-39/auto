@@ -12,7 +12,7 @@ public:
     Odo_get(odo_get_config config);
     double a;//中心角[rad]
     double p;//パルス量　エンコーダの回転数みたいなもの。
-    double r = 29;//半径[mm]
+    double r = 50;//半径[mm]
     double l;//孤の長さ[mm]
     double get_x() , get_y();
     

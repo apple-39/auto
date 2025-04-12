@@ -4,7 +4,7 @@
 #include"xy_calc/xy_calc.hpp"
 
 
-cytron_motor_driver_lib::Motor motorlf(23,22),motorlb(19,18),motorrf(15,14),motorrb(36,37);
+cytron_motor_driver_lib::Motor motorlf(19,18),motorlb(36,37),motorrf(15,14),motorrb(23,22);
 XY_CALC::CALC cal;
 
 
@@ -19,13 +19,13 @@ void loop() {
 
   // cal.show_x_y();
 
-  cal.input_calc(100,0);
+  cal.input_calc(0,100);
   cal.output_calc();
   
-  motorlf.drive(1.0 + cal.output_x + cal.output_y + cal.output_z );
-  motorlb.drive(1.0 + cal.output_x + cal.output_y + cal.output_z );
-  motorrf.drive(1.0 + cal.output_x + cal.output_y + cal.output_z );
-  motorrb.drive(1.0 + cal.output_x + cal.output_y + cal.output_z );
+  motorlf.drive(  -cal.output_x - cal.output_y - cal.output_z );
+  motorlb.drive(  cal.output_x - cal.output_y - cal.output_z );
+  motorrf.drive(  cal.output_x - cal.output_y + cal.output_z );
+  motorrb.drive(  -cal.output_x - cal.output_y + cal.output_z );
 
   Serial.println("");
 

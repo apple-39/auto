@@ -5,7 +5,7 @@ namespace XY_CALC
 {
     ODO_GET__ODO_GET::odo_get_config config = {41,40 , 21,20};
     ODO_GET__ODO_GET::Odo_get od( config );
-    simple_pid_lib::PIDConfig pid_config(0.005, 0, 0, 0, 0.0, 0.0, -1.0, 1.0);
+    simple_pid_lib::PIDConfig pid_config(0.0025, 0, 0.0000005, 0, 0.0, 0.0, -0.3, 0.3);
     simple_pid_lib::PID pid_x(pid_config) , pid_y(pid_config) , pid_z(pid_config);
 
     void CALC::set(){
@@ -45,12 +45,12 @@ namespace XY_CALC
         Serial.print("  yau角 : ");
         Serial.print(now_angle);
         
-        Serial.print("      output_z :");
-        Serial.print(output_z);
-        Serial.print("  output_x :");
+        Serial.print("      output_x :");
         Serial.print(output_x);
         Serial.print("  output_y :");
         Serial.print(output_y);
+        Serial.print("   output_z :");
+        Serial.print(output_z);
     }
 
 
