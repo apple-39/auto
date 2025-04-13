@@ -1,5 +1,6 @@
 #ifndef GETOUT_CONFIG__HPP
 #define GETOUT_CONFIG__HPP
+
 namespace GETOUT//フォルダと同じ
 {
 struct getout_config

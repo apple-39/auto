@@ -16,6 +16,8 @@ public:
 
 private:
     int phase = 0;
+    unsigned long stay_start_time = 0;  // 条件を満たし始めた時間
+    bool staying = 0;
     XY_CALC::CALC cal;
     cytron_motor_driver_lib::Motor motorlf,motorlb,motorrf,motorrb;
 

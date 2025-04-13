@@ -12,8 +12,13 @@
   "ignoreRegExpList": [
     "Copyright .*[0-9]{4}.+"
   ],
-  "overrides": [
-  ],
+  "overrides": [],
   "words": [
+    "Adafruit",
+    "cytron",
+    "motorlb",
+    "motorlf",
+    "motorrb",
+    "motorrf"
   ]
 }

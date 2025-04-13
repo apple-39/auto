@@ -1,6 +1,6 @@
 #include "getout/getout.hpp"
 #define  GIVE_RANGE 10
-
+#define  TARGET_HOLD_TIME_MS 1000
 namespace GETOUT
 {
     
@@ -17,34 +17,70 @@ void getout::getout_switch(){
     case 1:
         cal.input_calc(100 , 0 , 0);
         cal.output_calc();
-        if( cal.err_calc() < GIVE_RANGE  ){
-            phase += 1;
-            break;
-        } 
+
+        if( cal.err_calc() < GIVE_RANGE  ){//目標地点付近か？
+            if(!staying){
+                stay_start_time = millis();  
+                staying = 1;
+            }else if(millis() - stay_start_time >= TARGET_HOLD_TIME_MS){ //一定時間が経過したか？
+                phase += 1;
+                staying = 0; 
+                break;
+            }
+        }else{
+            staying = 0;
+        }
 
     case 2:
         cal.input_calc(100 , 100 , 0);
         cal.output_calc();
-        if( cal.err_calc() < GIVE_RANGE  ){
-            phase += 1;
-            break;
-        } 
+
+        if( cal.err_calc() < GIVE_RANGE  ){//目標地点付近か？
+            if(!staying){
+                stay_start_time = millis();  
+                staying = 1;
+            }else if(millis() - stay_start_time >= TARGET_HOLD_TIME_MS){ //一定時間が経過したか？
+                phase += 1;
+                staying = 0; 
+                break;
+            }
+        }else{
+            staying = 0;
+        }
 
     case 3:
         cal.input_calc(0 , 100 , 0);
         cal.output_calc();
-        if( cal.err_calc() < GIVE_RANGE  ){
-            phase += 1;
-            break;
-        }     
+
+        if( cal.err_calc() < GIVE_RANGE  ){//目標地点付近か？
+            if(!staying){
+                stay_start_time = millis();  
+                staying = 1;
+            }else if(millis() - stay_start_time >= TARGET_HOLD_TIME_MS){ //一定時間が経過したか？
+                phase += 1;
+                staying = 0; 
+                break;
+            }
+        }else{
+            staying = 0;
+        }
     
     case 4:
         cal.input_calc(0 , 0 , 0);
         cal.output_calc();
-        if( cal.err_calc() < GIVE_RANGE  ){
-            phase += 1;
-            break;
-        } 
+        
+        if( cal.err_calc() < GIVE_RANGE  ){//目標地点付近か？
+            if(!staying){
+                stay_start_time = millis();  
+                staying = 1;
+            }else if(millis() - stay_start_time >= TARGET_HOLD_TIME_MS){ //一定時間が経過したか？
+                phase += 1;
+                staying = 0; 
+                break;
+            }
+        }else{
+            staying = 0;
+        }
         
     default:
         break;

@@ -5,8 +5,9 @@ namespace XY_CALC
 {
     ODO_GET__ODO_GET::odo_get_config config = {41,40 , 21,20};
     ODO_GET__ODO_GET::Odo_get od( config );
-    simple_pid_lib::PIDConfig pid_config(0.0025, 0, 0.0000005, 0, 0.0, 0.0, -0.3, 0.3);
+    simple_pid_lib::PIDConfig pid_config(0.0025, 0, 0.0000005, 0, 0.0, 0.0, -0.333, 0.333);
     simple_pid_lib::PID pid_x(pid_config) , pid_y(pid_config) , pid_z(pid_config);
+
 
     void CALC::set(){
        gyro.set();
@@ -31,9 +32,9 @@ namespace XY_CALC
         now_angle = gyro.get_angle();
         err_calc();
 
-        pid_z.update(err_z);
-        pid_x.update(err_x);
-        pid_y.update(err_y);
+        pid_z.update(err_z_);
+        pid_x.update(err_x_);
+        pid_y.update(err_y_);
 
         pid_z.reset_integral();
         pid_x.reset_integral();
@@ -55,11 +56,11 @@ namespace XY_CALC
     }
 
     double CALC::err_calc(){
-        err_x = target_x_ - od.get_x();
-        err_y = target_y_ - od.get_y();
-        err_z = target_z_ - now_angle;
+        err_x_ = target_x_ - od.get_x();
+        err_y_ = target_y_ - od.get_y();
+        err_z_ = target_z_ - now_angle;
 
-        return sqrt(  err_x*err_x + err_y*err_y   );
+        return sqrt(  err_x_*err_x_ + err_y_*err_y_   );
 
     }
 
