@@ -13,7 +13,7 @@ public:
     // CALC();
     GYRO gyro;
     void set();
-    void input_calc(double target_x , double target_y);
+    void input_calc(double target_x , double target_y , double target_z);
     void show_x_y();
     void output_calc();
     double output_x, output_y , output_z;

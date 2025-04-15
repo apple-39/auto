@@ -18,9 +18,10 @@ namespace XY_CALC
     }
 
 
-    void CALC::input_calc(double target_x , double target_y){
+    void CALC::input_calc(double target_x , double target_y , double target_z){
         target_x_ = target_x;
         target_y_ = target_y;
+        target_z_ = target_z;
     }
 
     void CALC::output_calc(){
